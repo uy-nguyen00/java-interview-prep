@@ -20,3 +20,14 @@
 - Faire **une seule chose** (Single Responsibility Principle)
 
 *Avoir modificateurs d'accès, visibilité, prend en charge différentes types de variables (local, class, instances), déclarée `abstract, final, private`, peut être classe interne*
+
+
+## 3. C'est quoi l'abstraction?
+- Concept core de POO
+- Exposer à l'utilisateur uniquement ce qui lui est pertinent, masquer les détails internes
+- Réduire la complexité, réutiliser le code, éviter duplications --> faible couplage, forte cohésion
+
+*Exemple: Homme qui conduit la voiture. Ne connait ce que les pédales et le volant font. No need comprendre mécanique interne.*
+
+En Java, l'abstraction réalisée via les classes abstraites + interfaces.
+
