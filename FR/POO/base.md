@@ -51,4 +51,17 @@ En Java, l'abstraction réalisée via les classes abstraites + interfaces.
     - Runtime Polymorphism / Method overriding:
         - Le plus courant -- relation **"IS-A"**, via l'héritage ou interfaces
         - Interface avec un ensemble de méthodes à redéfinir à l'implémentation / sous-classe
-        - Exemple: Interface `Shape` - méthode `draw()`. Classes `Triangle`, `Rectangle`, `Circle` implémentent l'interface
+        - *Exemple: Interface `Shape` - méthode `draw()`. Classes `Triangle`, `Rectangle`, `Circle` implémentent l'interface*
+
+## 6. C'est quoi l'héritage?
+- Concept core de POO
+- Objet basé sur un autre objet
+- Réutilisation du code
+- Connu comme relation **"IS-A"** / **parent-enfant**
+- *Exemple: chat IS-A félin - train IS-A véhicule*
+- Réalisé via `extends` 
+- Parent: `superclass` - enfant `sub-class`
+- Sous-class réutilise champs + méthodes de superclasse et ajoute ses propres champs + méthodes
+- En Java, l'héritage n'est pas multiple
+
+*Exemple: Class `Employee` -- subclasses `Developer` / `Product Manager`*
