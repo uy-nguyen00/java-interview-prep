@@ -31,3 +31,11 @@
 
 En Java, l'abstraction réalisée via les classes abstraites + interfaces.
 
+## 4. C'est quoi l'encapsulation? 
+- Concept core de POO
+- Lier le code et les données dans une seule unité de travail (une classe)
+- Cacher l'état de l'objet
+- Exposer méthodes publiques
+- Mécanisme data-hiding
+- Faible couplage, réutilisable, sécurisé, facile à tester
+- Implémenté par `public, private, protected` (modificateurs d'accès)
