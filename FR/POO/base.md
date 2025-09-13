@@ -39,3 +39,16 @@ En Java, l'abstraction réalisée via les classes abstraites + interfaces.
 - Mécanisme data-hiding
 - Faible couplage, réutilisable, sécurisé, facile à tester
 - Implémenté par `public, private, protected` (modificateurs d'accès)
+
+## 5. C'est quoi le polymorphisme?
+- Concept core de POO
+- Objet peut se comporter différemment dans certains cas
+- Se manifester de 2 manières: 
+    - Compile-Time Polymorphism / Surcharge de méthode (method overloading):
+        - Plusieurs méthodes - même nom - signatures diff. (nombre, type, ordre des arguments)
+        - Compilateur identifie quelle forme de méthode utiliser au moment de compilation
+        - *Exemple: classe `Triangle` - plusieurs méthodes `draw()` avec plusieurs arguments diff.* 
+    - Runtime Polymorphism / Method overriding:
+        - Le plus courant -- relation **"IS-A"**, via l'héritage ou interfaces
+        - Interface avec un ensemble de méthodes à redéfinir à l'implémentation / sous-classe
+        - Exemple: Interface `Shape` - méthode `draw()`. Classes `Triangle`, `Rectangle`, `Circle` implémentent l'interface
