@@ -65,3 +65,14 @@ En Java, l'abstraction réalisée via les classes abstraites + interfaces.
 - En Java, l'héritage n'est pas multiple
 
 *Exemple: Class `Employee` -- subclasses `Developer` / `Product Manager`*
+
+## 7. C'est quoi l'assocation? 
+- Concept core de POO
+- Définir la relation entre 2 classes indépendantes
+- Relation de multiplicité
+- Pas de propriétaire
+- Bidirectionnel / unidirectionnel
+- Objets ont leur propre durée de vie
+- One-to-one / One-to-many / Many-to-one / Many-to-many
+
+*Exemple: `Person (name)` - `Address (city, zip)`. Personnes peuvent exister sans adresses et vice versa*
