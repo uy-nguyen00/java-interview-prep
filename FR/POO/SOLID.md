@@ -24,3 +24,19 @@
 *Pour respecter le SRP, la solution consiste à:*
 - Laisser la classe `RectangleAreaCalculator` se concentrer uniquement sur le calcul de l'aire `area()`
 - Extraire la conversion dans une classe séparée, par exemple `AreaConverter`
+
+## 2. C'est quoi O?
+- Open Closed Principle
+- Un des 5 principes de OOD
+- Ouvert à l'extension, fermé à la modification
+- Classes conçues de manière à ce que d'autres dev puissement modifier leur comportement en les étendant, sans avoir à modifier le code original de ces classes
+
+*Exemple: Calcul de la somme des aires de différentes formes géométriques (rectangles, cercles, triangles...)*
+> Non-conformité à l'OCP:
+> - Interface `Shape` - Classes `Rectangle`, `Circle` l'implémentent
+> - Class `AreaCalculator` - méthode `sum()` utilisant `if-else` pour déterminer le type de chaque forme et calculer leurs aires
+
+> Conformité à l'OCP:
+> - Méthode `area()` ajoutée à `Shape`
+> - Classes `Rectangle`, `Circle` l'implémentent
+> - Classe `AreaCalculator`: méthode `sum()` itère sur la liste des objets de type `Shape` + appelle `area()` de chaque forme
