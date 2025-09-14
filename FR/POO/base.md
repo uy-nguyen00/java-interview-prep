@@ -76,3 +76,11 @@ En Java, l'abstraction réalisée via les classes abstraites + interfaces.
 - One-to-one / One-to-many / Many-to-one / Many-to-many
 
 *Exemple: `Person (name)` - `Address (city, zip)`. Personnes peuvent exister sans adresses et vice versa*
+
+## 8. C'est quoi l'agrégation?
+- Concept core de POO
+- Cas spécial d'association unidirectionnelle
+- Relation **"HAS-A"**
+- 2 objets agrégés ont leur propre cycle de vie. 1 objet propriétaire "HAS-A"
+
+*Exemple: `TennisPlayer` possède un `Racket`. Si le joueur n'existe plus, la raquette n'est pas affectée, elle peut exister indépendamment.*
