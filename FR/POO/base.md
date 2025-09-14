@@ -84,3 +84,13 @@ En Java, l'abstraction réalisée via les classes abstraites + interfaces.
 - 2 objets agrégés ont leur propre cycle de vie. 1 objet propriétaire "HAS-A"
 
 *Exemple: `TennisPlayer` possède un `Racket`. Si le joueur n'existe plus, la raquette n'est pas affectée, elle peut exister indépendamment.*
+
+## 9. C'est quoi la composition?
+- Concept core de POO
+- Cas plus restrictif de l'agrégation
+- Relation **"HAS-A"** - objet contenu ne peut pas exister seul
+- Egalement appelé relation **"PART-OF"**
+- Objets ont un cycle de vie **dépendant**: parent détruit - enfant aussi détruit
+- Favoriser la réutilisation du code + contrôle de la visibilité des objets
+
+*Exemple: `Car` - `Engine`. Voiture possède un engin, engin fait partie de la voiture. Dans le contructeur de `Car`, `Engine` est créé directement -- ne peut pas exister indépendamment.*
