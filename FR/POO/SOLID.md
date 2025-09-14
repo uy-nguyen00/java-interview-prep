@@ -32,6 +32,7 @@
 - Classes conçues de manière à ce que d'autres dev puissement modifier leur comportement en les étendant, sans avoir à modifier le code original de ces classes
 
 *Exemple: Calcul de la somme des aires de différentes formes géométriques (rectangles, cercles, triangles...)*
+
 > Non-conformité à l'OCP:
 > - Interface `Shape` - Classes `Rectangle`, `Circle` l'implémentent
 > - Class `AreaCalculator` - méthode `sum()` utilisant `if-else` pour déterminer le type de chaque forme et calculer leurs aires
@@ -40,3 +41,25 @@
 > - Méthode `area()` ajoutée à `Shape`
 > - Classes `Rectangle`, `Circle` l'implémentent
 > - Classe `AreaCalculator`: méthode `sum()` itère sur la liste des objets de type `Shape` + appelle `area()` de chaque forme
+
+## 3. C'est quoi L?
+- Liskov's Substitution Principle
+- Un des 5 principes de OOD
+- Les types dérivées doivent être entièrement substituables à leurs types de base: 
+    - Objets des sous-classes se comportent comme les objets des super-classes
+- Utile pour **runtime-type identification** suivie d'un `cast`
+
+*Exemple: Club d'échecs avec diff types de membres: `PremiumMember`, `VipMember` et `FreeMember`. Classe abstraite de base `Member`.*
+
+> Non-conformité au LSP:
+> - `Member`: méthodes `joinTournament()` et `organizeTournament()`
+> - Classes `PremiumMember` et `VipMember` peuvent implémenter ces 2 méthodes
+> - Classe `FreeMember` implémente `joinTournament()`, mais affiche un message d'erreur pour `organizeTournament()`
+> - Donc `FreeMember` ne peut pas substituer la classe de base `Member()`
+
+> Conformité au LSP:
+> - 2 interfaces: `TournamentJoiner` et `TournamentOrganizer`
+> - Classe abstraite `Member` implémente ces 2 interfaces
+> - Classes `PremiumMember` et `VipMember` étendent `Member`
+> - Classe `FreeMember` n'étend pas `Member`, mais implémente **uniquement** `TournamentJoiner`
+> - Donc: une liste de `TournamentJoiner` peut contenir tous les types de membres, tandis qu'une liste de `TournamentOrganizer` ne contient que `PremiumMember` et `VipMember`
