@@ -63,3 +63,22 @@
 > - Classes `PremiumMember` et `VipMember` étendent `Member`
 > - Classe `FreeMember` n'étend pas `Member`, mais implémente **uniquement** `TournamentJoiner`
 > - Donc: une liste de `TournamentJoiner` peut contenir tous les types de membres, tandis qu'une liste de `TournamentOrganizer` ne contient que `PremiumMember` et `VipMember`
+
+## 4. C'est quoi I?
+- Interface Segregation Principle
+- Les clients ne doivent pas être contraints d'implémenter des méthodes initules qu'ils n'utiliseront pas
+    - Faut donc diviser les interfaces volumineuses en plusieurs intefaces plus petites et plus spécifiques
+    - L'objectif: clients n'implémentent que les méthodes pertinentes, évitant des implémentations vides des méthodes inutiles
+
+*Exemple: La gestion de différents types de connexions réseau*
+
+> Non-conformité à l'ISP:
+> - Interface `Connection` - méthodes pour tous types de connexion `socket()`, `http()` et `connect()`
+> - Classe cliente `WwwPingConnection` ne gère que les connexions HTTP. Il est donc obligé d'implémenter l'interface `Connection` complète
+> - Cette classe fournit une implémentation utile pour `http()` et `connect()`, mais est forcée d'implémenter `socket()` vide ou qui lève une exception
+
+> Conformité à l'ISP:
+> - Faut donc séparer ("ségréger") l'interface `Connection`:
+    > - Interface `Connection` - méthode `connect()`
+    > - Interfaces enfants `HttpConnection` et `SocketConnection` - méthodes `http()` et `socket()`
+> - Classe `WwwPingConnection` n'implémente que l'interface `HttpConnection`
