@@ -82,3 +82,22 @@
     > - Interface `Connection` - méthode `connect()`
     > - Interfaces enfants `HttpConnection` et `SocketConnection` - méthodes `http()` et `socket()`
 > - Classe `WwwPingConnection` n'implémente que l'interface `HttpConnection`
+
+## 5. C'est quoi D?
+- Dependency Inversion Principle
+- Un des 5 principes de OOD
+- Dépendre des abstractions, et non des implémentations concrètes:
+    - Appuyer sur des couches abstraites pour lier des modules entre eux
+    - &rarr; Tous les modules concrets doivent exposer uniquement des abstractions
+    - &rarr; Modules concrets permettent l'extension des fonctionnalités ou l'intégration d'un autre module concret - tout en maintenant **le découplage**   
+
+*Exemple: Classe de haut niveau `ConnectToDatabase`, qui a besoin d'une URL JDBC de bas niveau pour se connecter à une BDD.*
+
+> Non-conformité au DIP:
+> - Si `connect()` de la classe `ConnectToDatabase` prend un argument de type `PostgreSQLJdbcUrl`, elle dépend d'une implémentation concrète
+> - Si on veut utiliser `MySQLJdbcUrl`, on peut pas utiliser la méthode `connect()` existant
+
+> Conformité au DIP:
+> - Faut donc créer une **abstraction**: interface `JdbcUrl`
+> - Classe `PostgreSQLJdbcUrl` l'implémente - ainsi que la classe `MySQLJdbcUrl` ou `OracleJdbcUrl`
+- `connect()` dépend donc de l'abstraction `JdbcUrl` &rarr; permets de se connecter à n'importe quelle BDD pour laquelle une implémentation `JdbcUrl` existe
