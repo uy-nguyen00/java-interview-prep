@@ -17,3 +17,41 @@
 - Visibilité: `public` ne peut pas être redéfinie en `protected`
 - Exceptions: La méthode redéfnie ne peut pas lever de *checked exceptions* qui sont plus hautes dans la hiérarchie
 - Annotation `@Override` fortement recommandé
+
+```java
+// L'héritage
+
+public class Parent {
+
+    public void execute() {
+        System.out.println("Execute parent code ...");
+    }
+}
+
+public class Child extends Parent {
+
+    @Override
+    public void execute() {
+        // super.execute(); - if you want to execute the parent code first
+        System.out.println("Execute child code ...");
+    }
+}
+```
+
+```java
+// Polymorphisme
+
+public interface Base {
+
+    public void execute();
+}
+
+public class Concrete implements Base {
+
+    @Override
+    public void execute() {
+        System.out.println("Execute concrete code ...");
+    }
+
+}
+```
