@@ -98,3 +98,52 @@ public class Foo {
     */
 }
 ```
+
+## 3. C'est quoi covariant method overriding (surcharge de méthode covariante)? 
+- Introduit dans Java 5
+- Permet à une méthode de surcharge de renvoyer un sous-type de son type de retour réel
+- Avantage: éviter le `cast`
+
+*Exemple: méthode `clone()` retourne un `Objet` &rarr; une méthode `clone()` surchargée peut retourner la sous-classe au lieu de `Object`.*
+
+```java
+public class Rectangle implements Cloneable {
+
+    private final int height;
+    private final int width;
+
+    public Rectangle(int height, int width) {
+        this.height = height;
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }        
+
+    @Override
+    protected Rectangle clone() throws CloneNotSupportedException {
+
+        Rectangle clone = (Rectangle) super.clone();
+
+        return clone;
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) throws CloneNotSupportedException {
+
+        Rectangle r = new Rectangle(4, 3);
+        Rectangle clone = r.clone();
+
+        System.out.println("Width: " + clone.getWidth());
+        System.out.println("Height: " + clone.getHeight());
+    }
+}
+```
