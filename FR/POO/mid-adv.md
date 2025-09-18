@@ -165,3 +165,124 @@ public class Main {
     - **Type de retour** : Le type de retour ne fait pas partie de la signature. Deux méthodes avec des signatures identiques mais des types de retour différents ne constituent pas une surcharge valide
     - **Méthodes surchargeables** : Les méthodes `private`, `static` ou `final`
     - **Exceptions** : Aucune restriction
+
+> Exemple pour la redéfinition
+```java
+public class Parent {
+
+    public void foo() throws SQLException {
+        System.out.println("Executing Parent#foo() that throws SQLException");
+        throw new SQLException("Parent#foo() did this!");
+    }     
+    
+    public void buzz() {
+        System.out.println("Executing Parent#buzz() that doesn't throw any exception");
+    }
+}
+
+
+```
+
+```java
+public class Child extends Parent {
+
+    // BatchUpdateException is subclass of SQLException      
+    // of course, we can throw SQLException as well or other subclass of it
+    @Override
+    public void foo() throws BatchUpdateException { 
+        System.out.println("Executing Child#foo() that throws BatchUpdateException");
+        throw new BatchUpdateException("Child#foo() did this!", new int[0]);
+    }        
+
+    // we can throw and RuntimeException
+    @Override
+    public void buzz() {
+        throw new RuntimeException("Child#buzz() did this!");
+    }        
+}
+```
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        Parent p = new Parent();
+        Child c = new Child();
+
+        try {
+            p.foo();
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }
+
+        System.out.println();
+        
+        try {
+            c.foo();
+        } catch (BatchUpdateException ex) {
+            System.err.println(ex);
+        }
+        
+        System.out.println();
+
+        p.buzz();
+        
+        System.out.println();
+
+        try {
+            c.buzz();
+        } catch (RuntimeException ex) {
+            System.err.println(ex);
+        }
+    }
+}
+```
+
+> Exemple pour la surcharge
+```java
+public class Clazz {
+
+    public void foo(String foozzy) {
+        System.out.println("Executing Clazz#foo() that doesn't throw any exception");
+    }
+
+    public void foo() throws SQLException {
+        System.out.println("Executing Clazz#foo() that throws SQLException");
+        throw new SQLException("Cazz#foo() did this!");
+    }
+
+    public void foo(int foozzy) {
+        System.out.println("Executing Clazz#foo() that throws RuntimeException");
+        throw new RuntimeException("Clazz#foo(int foozzy) did this!");
+    }
+}
+```
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        Clazz clazz = new Clazz();
+
+        clazz.foo("Foozzy");
+        
+        System.out.println();
+
+        try {
+            clazz.foo();
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }
+        
+        System.out.println();
+
+        try {
+            clazz.foo(1);
+        } catch (RuntimeException ex) {
+            System.err.println(ex);
+        }
+    }
+}
+```
