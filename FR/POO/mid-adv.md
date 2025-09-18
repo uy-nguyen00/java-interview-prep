@@ -147,3 +147,21 @@ public class Main {
     }
 }
 ```
+
+## 4. Quelles sont les restrictions principales en travaillant la redéfinition (overriding) et la surcharge (overloading) de méthodes? 
+> Restrictions pour la redéfinition de  méthode (method overriding)
+- Utilisée dans l'**héritage** ou **polymorphisme à l'exécution** (Runtime Polymorphism)
+- Règles principales:
+    - **Signature identique** : Le nom + signature (y compris le type de retour ou son sous-type) doivent être les mêmes dans la super-class et sub-class
+    - **Méthodes non-redéfinissables** : Méthodes `final`, `static` et `private` ne peuvent être réfinies
+    - **Accessibilité** : Méthode `public` ne peut pas redéfinie en `protected`
+    - **Exceptions** : Méthode de redéfinition ne peut pas lancer d'exceptions vérifiées (`checked exceptions`) qui sont plus hautes dans la hiérarchie. Acune restriction pour les exceptions non vérifiées (`unchecked exceptions`)
+    - **Contexte** : Une méthode ne peut être redéfinie que dans une sous-classe
+
+> Restrictions pour la surcharge de méthode (method overloading)    
+- Permet d'avoir plusieurs méthodes avec le même nom mais des fonctionnalités différentes.
+- Règles principales:
+    - **Signature différente** : Cette technique est réalisée en changeant la signature de la méthode, cad le nombre, le type ou l'ordre des arguments
+    - **Type de retour** : Le type de retour ne fait pas partie de la signature. Deux méthodes avec des signatures identiques mais des types de retour différents ne constituent pas une surcharge valide
+    - **Méthodes surchargeables** : Les méthodes `private`, `static` ou `final`
+    - **Exceptions** : Aucune restriction
