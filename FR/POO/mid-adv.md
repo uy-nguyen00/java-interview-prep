@@ -291,3 +291,7 @@ public class Main {
 - On peut surcharger la méthode `main()`, mais on ne peut pas la redéfinir
 - **Surcharge** : Possible puisque c'est une méthode `static` (ainsi que les méthodes `private`, `final`)
 - **Redéfinition** : Pas possible, puisque la méthode `main()` est `static`. Les méthodes `static` sont résolues à la compilation, tandis que les méthodes qui peuvent être redéfinies sont résolues à l'exécution en fonction du type de l'objet
+
+## 6. Peut-on redéfinir une méthode non-statique en statique?
+Non, et l'inverse non plus. Ces deux cas entraînent des erreurs de compilation
+
