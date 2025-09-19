@@ -295,3 +295,138 @@ public class Main {
 ## 6. Peut-on redéfinir une méthode non-statique en statique?
 Non, et l'inverse non plus. Ces deux cas entraînent des erreurs de compilation
 
+## 7. Dans Java, peut-on avoir des méthodes non-abstraites dans une interface?
+- Oui, mais seulement depuis Java 8
+- On peut donc ajouter des méthodes avec une implémentation directement dans les interfaces avec les mots-clé `default` et `static` :
+    - `default` : Permet de faire évoluer les interfaces existantes dans casser le code qui les implémente, aussurant ainsi la rétrocompatibilité (backward compability)
+    - `static` : Similaire aux méthodes `default`, mais ne peut pas être redéfinie (overriden) dans les classes qui implémentent l'interface
+
+```java
+public interface Vehicle {
+
+    public void speedUp();
+
+    public void slowDown();
+
+    default double computeConsumption(int fuel, int distance, int horsePower) {        
+        return Math.random() * 10d;
+    }
+    
+    static void description() {
+        System.out.println("This interface control steam, petrol and electric cars");
+    }
+}
+```
+
+```java
+public class SteamCar implements Vehicle {
+
+    private String name;
+
+    public SteamCar(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void speedUp() {
+        System.out.println("Speed up the steam car ...");
+    }
+
+    @Override
+    public void slowDown() {
+        System.out.println("Slow down the steam car ...");
+    }
+}
+```
+
+```java
+public class ElectricCar implements Vehicle {
+
+    private String name;
+    private int horsePower;
+
+    public ElectricCar(String name, int horsePower) {
+        this.name = name;
+        this.horsePower = horsePower;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getHorsePower() {
+        return horsePower;
+    }
+
+    @Override
+    public void speedUp() {
+        System.out.println("Speed up the electric car ...");
+    }
+
+    @Override
+    public void slowDown() {
+        System.out.println("Slow down the electric car ...");
+    }
+
+    @Override
+    public double computeConsumption(int fuel, int distance, int horsePower) {
+        return Math.random() * 60d / Math.pow(Math.random(), 3);
+    }     
+
+}
+```
+
+```java
+public class PetrolCar implements Vehicle {
+
+    private String name;
+    private int horsePower;
+
+    public PetrolCar(String name, int horsePower) {
+        this.name = name;
+        this.horsePower = horsePower;
+    }       
+
+    public String getName() {
+        return name;
+    }
+
+    public int getHorsePower() {
+        return horsePower;
+    }        
+    
+    @Override
+    public void speedUp() {
+        System.out.println("Speed up the petrol car ...");
+    }
+
+    @Override
+    public void slowDown() {
+        System.out.println("Slow down the petrol car ...");
+    }    
+}
+```
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        Vehicle.description();
+
+        PetrolCar pc = new PetrolCar("Audi", 150);
+        System.out.println("Petrol car consume: "
+                + String.format("%.1f", pc.computeConsumption(250, 50, pc.getHorsePower()))
+                + " l/100km");
+
+        ElectricCar ec = new ElectricCar("Audi", 150);
+        System.out.println("Electric car consume: "
+                + String.format("%.1f", ec.computeConsumption(250, 50, ec.getHorsePower()))
+                + " kW/h");
+    }
+}
+```
