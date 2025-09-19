@@ -430,3 +430,10 @@ public class Main {
     }
 }
 ```
+
+## 8. Quelles sont les différences principales entre les interfaces avec les méthodes `default` et les classes abstraites?
+- **Constructeur et état** : Une classe abstraite peut avoir un constructeur et un état (des variables d'instance). Par contre l'interface non
+- **Objet et abstraction** : Classe abstraite - abstraction partielle. Interface - abstraction complète en spécifiant des contrats. Les méthodes `default` dans interfaces permettent d'ajouter des fonctionnalités sans modifier l'état ni casser le code client existant
+- **Utilisation** :
+    - Classe abstraite sans méthode abstraite &rarr; acceptable
+    - Interface avec seulement les méthodes `default` &rarr; anti-pattern
