@@ -446,3 +446,5 @@ public class Main {
 ## 10. Peut-on avoir une classe abstraite sans aucune méthode abstraite?
 Oui, on peut. En ajoutant le mot-clé `abstract`, une classe devient abstraite. Elle ne peut pas être instantié, pourtant elle peut avoir les constructeurs et seulement les méthodes non-abstraites
 
+## 11. Une classe peut-elle être abstraite et finale en même temps?
+Non, puisqu'une classe abstraite est censée d'être héritée, tandis qu'une classe finale ne l'est pas
