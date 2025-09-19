@@ -437,3 +437,8 @@ public class Main {
 - **Utilisation** :
     - Classe abstraite sans méthode abstraite &rarr; acceptable
     - Interface avec seulement les méthodes `default` &rarr; anti-pattern
+
+## 9. Différences entre les classes abstraites et les interfaces?
+- Classe abstraite peut contenir des méthodes non-abstraites
+- Interface ne le peut pas
+- Depuis Java 8, la différence principale: classe abstraite peut avoir les constructeurs et l'état. L'interface ne peut avoir aucun des deux    
