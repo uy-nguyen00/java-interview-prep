@@ -448,3 +448,15 @@ Oui, on peut. En ajoutant le mot-clé `abstract`, une classe devient abstraite. 
 
 ## 11. Une classe peut-elle être abstraite et finale en même temps?
 Non, puisqu'une classe abstraite est censée d'être héritée, tandis qu'une classe finale ne l'est pas
+
+## 12. Différences entre le polymorphisme, la redéfinition et la surcharge?
+- **Surcharge** (Overloading) : 
+    - Polymorphisme à la compilation (Compile-Time Polymorphism)
+    - Utilise `static (early) binding`
+    - 2 méthodes - même nom - signatures différentes
+    - Peut se produire au sein de la même classe
+- **Redéfinition** (Overriding) : 
+    - Polymorphisme à l'exécution (Runtime Polymorphism) 
+    - Utilise `dynamic (late) binding`
+    - 2 méthodes - même nom + signature - comportements différents
+    - Contexte de l'héritage / l'implémentation de l'interface
