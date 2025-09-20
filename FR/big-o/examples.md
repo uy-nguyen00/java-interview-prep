@@ -48,3 +48,24 @@ for (int i = 0; i < a.length; i ++) {
 ![alt text](images/Figure_7.3_B15403.jpg)
 
 &rarr; Le cas 2 a un temps de O(2n) = O(n)
+
+# Exemple 4 - abandon des termes non dominants
+![alt text](images/Figure_7.4_B15403.jpg)
+
+- La première boucle est exécutée en O(n).
+- La deuxième boucle est en O($n^2$).
+
+&rarr; O(n) + O($n^2$) = O(n + $n^2$) ?
+
+**Non!** 
+
+- Le taux de croissance vient de $n^2$, tandis que n est terme **non dominant**.
+- Si la taille du tableau augmente, alors $n^2$ affecte le taux de croissance bien plus que n &rarr; n n'est pas pertinent.
+
+> Quelques exemples supplémentaires
+- O($2^n + 2^n$) &rarr; abandonner les constantes et les termes non dominants &rarr; O($2^n$).
+- O(n + log n) &rarr; abandonner les termes non dominants &rarr; O(n).
+- O($3n^2 + n + 2n$) &rarr; abandonner les constantes et les termes non dominants &rarr; O($n^2$).
+
+> [!NOTE] 
+> Abandonner les termes non dominants
