@@ -29,3 +29,22 @@ for (int i = 0; i < a.length; i++>) {
 - Combien de fois la boucle itère? &rarr; a.length fois.
 - Le temps augmente de manière linéaire avec la taille du tableau.
 - Temps de O(a.length) = O(n)
+
+# Exemple 3 - O(n) - abandon des constants (dropping the constants)
+```java
+// 'a' est un tableau
+for (int i = 0; i < a.length; i ++) {
+    System.out.println("Current element:");
+
+    System.out.println(a[i]);
+
+    System.out.println("Current element + 1:");
+
+    System.out.println(a[i] + 1);
+}
+```
+&rarr; O(n)
+
+![alt text](images/Figure_7.3_B15403.jpg)
+
+&rarr; Le cas 2 a un temps de O(2n) = O(n)
