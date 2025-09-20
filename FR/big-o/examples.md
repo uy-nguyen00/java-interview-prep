@@ -18,3 +18,14 @@ Car car = cars.peek();
 - La méthode `Queue#peek()` récupère, mais ne supprime pas, la tête (1er élément) de cette file d'attente. 
 - Nombre d'éléments qui suivent la tête n'a pas d'importance.
 - Le temps de la méthode `peek()` est de O(1).
+
+# Exemple 2 - O(n) - algo en temps linéaire
+```java
+// 'a' est un tableau
+for (int i = 0; i < a.length; i++>) {
+    System.out.println(a[i]);
+}
+```
+- Combien de fois la boucle itère? &rarr; a.length fois.
+- Le temps augmente de manière linéaire avec la taille du tableau.
+- Temps de O(a.length) = O(n)
