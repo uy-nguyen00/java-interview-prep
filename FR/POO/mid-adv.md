@@ -460,3 +460,41 @@ Non, puisqu'une classe abstraite est censée d'être héritée, tandis qu'une cl
     - Utilise `dynamic (late) binding`
     - 2 méthodes - même nom + signature - comportements différents
     - Contexte de l'héritage / l'implémentation de l'interface
+
+## 13. C'est quoi "method hiding" (masquage de méthode) dans Java?
+- Se produit lorsque 2 méthodes static sont déclarées avec le même nom et la même signature - dans la super-class et la sub-class
+- La méthode de sub-class masque donc celle de la super-class
+- Points clés:
+    - Ne s'applique qu'aux méthodes static
+    - Nom de super-class &rarr; méthode de super-class. Nom de sub-class &rarr; méthode de sub-class
+    - N'est pas la redéfinition (overriding), car méthodes static ne peuvent pas être polymorphes
+
+```java
+public class Vehicle {
+
+    public static void move() {
+        System.out.println("Moving a vehicle");
+    }
+}
+```
+
+```java
+public class Car extends Vehicle {
+    
+    // this method hides Vehicle#move()
+    public static void move() {
+        System.out.println("Moving a car");
+    }
+}
+```
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        Vehicle.move(); // call Vehicle#move()
+        Car.move();     // call Car#move()
+    }
+}
+```
