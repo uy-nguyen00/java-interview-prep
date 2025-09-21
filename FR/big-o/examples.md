@@ -204,13 +204,13 @@ On peut donc exprimer Big O comme $O(2^{log(n)})$, puisque la profondeur est app
 
 ---
 
-\[ 2^{log(n)} = X \\
+$2^{log(n)} = X$ <br/> 
 
-\implies log_2(X) = log(n) \\
+$\implies log_2(X) = log(n)$ <br/>
 
-\implies X = n \\
+$\implies X = n$ <br/>
 
-\implies O(X) = O(n) \\ \]
+$\implies O(X) = O(n)$ <br/>
 
 Donc, Big O dans ce cas est $O(n)$
 
