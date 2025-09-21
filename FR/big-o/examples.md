@@ -84,3 +84,10 @@ for (int i = 0; i < a.length; i ++) {
 
 > [!NOTE]    
 > Des entrées différentes &rarr; des variables différentes.
+
+# Exemple 6 - Les différentes étapes sont additionnées ou multipliées
+*a et b sont des tableaux*
+![alt text](images/Figure_7.6_B15403.jpg)
+
+- **Snippet 1 :** O(a + b)
+- **Snippet 2 :** O(a * b)
