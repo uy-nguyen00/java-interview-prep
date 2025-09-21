@@ -194,11 +194,11 @@ void printInOrder(Node node) {
 ![alt text](images/Figure_7.11_B15403.jpg)
 
 - Pour 15 noeuds, nous avons une profondeur de 4 <br>
-&rarr; On a $$ 2^4 = 16 \implies log_2(16) = 4 $$
+&rarr; On a $$2^4 = 16 \implies log_2(16) = 4$$
 - Pour 7 noeuds, nous avons une profondeur de 3 <br>
-&rarr; On a $$ 2^3 = 8 \implies log_2(8) = 3 $$
+&rarr; On a $$2^3 = 8 \implies log_2(8) = 3$$
 - Pour 31 noeuds, nous avons une profondeur de 5 <br>
-&rarr; On a $$ 2^5 = 32 \implies log_2(32) = 5 $$
+&rarr; On a $$2^5 = 32 \implies log_2(32) = 5$$
 
 On peut donc exprimer Big O comme $O(2^{log(n)})$, puisque la profondeur est approx. $log(n)$.
 
