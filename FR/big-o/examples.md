@@ -68,4 +68,19 @@ for (int i = 0; i < a.length; i ++) {
 - O($3n^2 + n + 2n$) &rarr; abandonner les constantes et les termes non dominants &rarr; O($n^2$).
 
 > [!NOTE] 
-> Abandonner les termes non dominants
+> Abandonner les termes non dominants.
+
+# Exemple 5 - entrées différenes &rarr; variables différentes
+
+*a et b sont des tableaux*
+![alt text](images/Figure_7.5_B15403.jpg)
+
+- **Snippet 1 :** 2 boucles parcourant le même tableau &rarr; O(n).
+- **Snippet 2 :** 
+    - 2 boucles
+    - Mais 2 tableaux différents
+    - **Big O != O(n)**
+    - &rarr; Big O = O(a + b)
+
+> [!NOTE]    
+> Des entrées différentes &rarr; des variables différentes.
