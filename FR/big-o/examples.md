@@ -156,3 +156,23 @@ Dans notre cas, $2^k = n$ signifie $2^4 = 16$ donc $log_2 16 = 4$
 
 >[!NOTE]
 > Lorsqu'on doit exprimer le Big O pour un algo qui divise son entrée par `2` à chaque étape/itération, il y a de grandes changes qu'il s'agisse d'un cas de O(log n).
+
+# Exemple 8 - Temps d'exécution récursifs
+
+```java
+int fibonacci(int k) {
+    if (k <= 1) {
+        return k;
+    }
+
+    return fibonacci(k - 2) + fibonacci(k - 1);
+}
+```
+
+![alt text](images/Figure_7.10_B15403.jpg)
+
+- Le profondeur de l'abre est `k = 7`.
+- Chaque niveau a 2 fois plus d'appels que le précédent.
+- La complexité temporelle est de $O(branches^{profondeur})$ <br> 
+&rarr; $O(2^k)$ , noté $O(2^n)$.
+- La complexité spatiale est de $O(n)$ , car à aucun moment il n'y a plus de `k` nombres dans la pile d'appels. L'exemple montre qu'on ne peut avoir que les nombres entre 1 et 7.
