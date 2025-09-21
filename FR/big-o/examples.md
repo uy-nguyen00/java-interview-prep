@@ -240,3 +240,69 @@ int fibonacci(int k) {
 ![alt text](images/big_o-ex-10-1.png)
 
 &rarr; La complexité de cette somme est dominée par le dernier terme, le plus coûteux, $O(2^k)$, ou $O(2^n)$.
+
+# Exemple 11 - Memoïsation (memoization)
+
+```java
+void printFibonacci(int k) {
+    int[] cache = new int[k];
+    for (int i = 0; i < k; i++) {
+        System.out.println(i + ": " + fibonacci(i, cache));
+    }
+}
+
+int fibonacci(int k, int[] cache) {
+    if (k <= 1) {
+        return k;
+    } else if (cache[k] > 0) {
+        return cache[k];
+    }
+
+    cache[k] = fibonacci(k - 2, cache) + fibonacci(k - 1, cache);
+
+    return cache[k];
+}
+```
+
+Cette technique permet de mettre en cache la valeur de calculée et de l'utiliser pour réduire les appels récursifs. Visualisons le temps d'exécution pour `k = 7` :
+
+```
+Appel de fibonacci(0): Le résultat de fibonacci(0) est 0
+
+Appel de fibonacci(1): Le résultat de fibonacci(1) est 1
+
+Appel de fibonacci(2): 
+    fibonacci(0) 
+    fibonacci(1) 
+    fibonacci(2) est calculé et mis en cache[2]
+Le résultat de fibonacci(2) est 1 --> cache[2] = 1
+
+Appel de fibonacci(3): 
+    fibonacci(1) 
+    fibonacci(2) est récupéré du cache[2] : 1
+    fibonacci(3) est calculé et mis en cache[3]
+Le résultat de fibonacci(3) est 2 --> cache[3] = 2
+
+Appel de fibonacci(4): 
+    fibonacci(2) est récupéré du cache[2] : 1 
+    fibonacci(3) est récupéré du cache[3] : 2
+    fibonacci(4) est calculé et mis en cache[4]
+Le résultat de fibonacci(4) est 3 --> cache[4] = 3
+
+Appel de fibonacci(5):  
+    fibonacci(3) est récupéré du cache[3] : 2  
+    fibonacci(4) est récupéré du cache[4] : 3  
+    fibonacci(5) est calculé et mis en cache[5]  
+Le résultat de fibonacci(5) est 5 --> cache[5] = 5
+
+Appel de fibonacci(6):  
+    fibonacci(4) est récupéré du cache[4] : 3  
+    fibonacci(5) est récupéré du cache[5] : 5  
+    fibonacci(6) est calculé et mis en cache[6]  
+Le résultat de fibonacci(6) est 8 --> cache[6] = 8
+```
+
+- Chaque méthode `fibonacci(k)` est calculée à partir de `fibonacci(k - 1)` et `fibonacci(k - 2)` mises en cache.
+- Récupérer les valeurs calculées et les additionner &rarr; temps constant.
+
+&rarr; $O(n)$
