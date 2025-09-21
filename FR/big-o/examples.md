@@ -176,3 +176,45 @@ int fibonacci(int k) {
 - La complexité temporelle est de $O(branches^{profondeur})$ <br> 
 &rarr; $O(2^k)$ , noté $O(2^n)$.
 - La complexité spatiale est de $O(n)$ , car à aucun moment il n'y a plus de `k` nombres dans la pile d'appels. L'exemple montre qu'on ne peut avoir que les nombres entre 1 et 7.
+
+# Exemple 9 - Parcours "in-order" d'un arbre binaire
+
+```java
+void printInOrder(Node node) {
+    if (node != null) {
+        printInOrder(node.left);
+        System.out.println(" " + node.element);
+        printInOrder(node.right);
+    }
+}
+```
+
+> Considérons un arbre de recherche binaire parfait - noeuds internes ont **2 enfants** + toutes les feuilles sont au **même niveau** ou à la **même profondeur**.
+
+![alt text](images/Figure_7.11_B15403.jpg)
+
+- Pour 15 noeuds, nous avons une profondeur de 4 <br>
+&rarr; On a $$ 2^4 = 16 \implies log_2(16) = 4 $$
+- Pour 7 noeuds, nous avons une profondeur de 3 <br>
+&rarr; On a $$ 2^3 = 8 \implies log_2(8) = 3 $$
+- Pour 31 noeuds, nous avons une profondeur de 5 <br>
+&rarr; On a $$ 2^5 = 32 \implies log_2(32) = 5 $$
+
+On peut donc exprimer Big O comme $O(2^{log(n)})$, puisque la profondeur est approx. $log(n)$.
+
+---
+
+$$
+2^{log(n)} = X \\
+
+\implies log_2(X) = log(n) \\
+
+\implies X = n \\
+
+\implies O(X) = O(n)
+$$
+
+Donc, Big O dans ce cas est $O(n)$
+
+> [!NOTE]
+> On peut remarquer qu'un parcours "in-order" visite chaque noeud de l'arbre exactement une fois. Comme le travail à chaque noed est constant, la complexité totale est proportionnelle au nombre de noeuds &rarr; $O(n)$
