@@ -147,12 +147,11 @@ $n * (\frac{1}{2})^k = 1$
 
 $2^k = n$ est exactement ce que signifie le logarithme. On peut donc écrire :
 
-$2^k = n $ &rarr; $log_2 n = k$
+$2^k = n$ &rarr; $log_2 n = k$
 
 Dans notre cas, $2^k = n$ signifie $2^4 = 16$ donc $log_2 16 = 4$
 
-> Le Big O pour l'algo Binary Search est O(log n). 
-
+> Le Big O pour l'algo Binary Search est O(log n). <br>
 > Où est la base du log? &rarr; Pas nécessaire pour exprimer le Big O, car les logarithmes de bases différentes ne diffèrent que par un facteur constant. 
 
 >[!NOTE]
