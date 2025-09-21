@@ -216,3 +216,27 @@ Donc, Big O dans ce cas est $O(n)$
 
 > [!NOTE]
 > On peut remarquer qu'un parcours "in-order" visite chaque noeud de l'arbre exactement une fois. Comme le travail à chaque noed est constant, la complexité totale est proportionnelle au nombre de noeuds &rarr; $O(n)$
+
+# Exemple 10 - n peut varier
+```java
+void printFibonacci(int k) {
+    for (int i = 0; i < k; i++) {
+        System.out.println(i + " : " + fibonacci(i));
+    }
+}
+
+int fibonacci(int k) {
+    if (k <= 1) {
+        return k;
+    }
+    return fibonacci(k - 2) + fibonacci(k - 1);
+}
+```
+
+- D'après l'exemple 8, on sais que Big O de `fibonacci()` est de $O(2^n)$.
+- `printFibonacci()` appelle `fibonacci()` n fois &rarr; $O(n) * O(2^n) = O(n2^n)$ ?
+- **Non !** `fibonacci()` n'est pas appelée avec la même valeur `k` à chaque fois, mais avec `i`, qui change à chaque tour de boucle :
+
+![alt text](images/big_o-ex-10-1.png)
+
+&rarr; La complexité de cette somme est dominée par le dernier terme, le plus coûteux, $O(2^k)$, ou $O(2^n)$.
