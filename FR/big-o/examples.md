@@ -306,3 +306,35 @@ Le résultat de fibonacci(6) est 8 --> cache[6] = 8
 - Récupérer les valeurs calculées et les additionner &rarr; temps constant.
 
 &rarr; $O(n)$
+
+# Exemple 12 - Parcourir la moitié de la matrice
+
+```java
+// Extrait 1
+for (int i = 0; i < a.length; i++) {
+    for (int j = 0; j < a.length; j++) {
+        System.out.println(a[i] + a[j]);
+    }
+}
+
+// Extrait 2
+for (int i = 0; i < a.length; i++) {
+    for (int j = i + 1; j < a.length; j++) {
+        System.out.println(a[i] + a[j]);
+    }
+}
+```
+
+On peut visualiser le temps d'exécution de ces 2 extraits. En supposant que `a.length = 5` :
+
+![alt text](images/big_o-ex12-1.png)
+
+- La 1ère matrice a un temps d'exécution de 
+$$n * n = n^2 \implies O(n^2)$$
+- La 2ème matrice a un temps d'exécution de
+$$\frac{n*n}{2} = \frac{n^2}{2} = n^2 * \frac{1}{2} \implies O(n^2)$$
+
+Donc les 2 matrices ont une complexité de $O(n^2)$
+
+- Pour la 1ère matrice, la boucle interne s'exécute `n` fois, et encore `n` fois par la boucle externe, ce qui donne $O(n^2)$.
+- Pour la 2ème matrice, la boucle interne effectue `n/2` opérations + exécutée `n` fois par la boucle externe, donc $n * \frac{n}{2} = \frac{n^2}{2}$, ce qui donne $O(n^2)$, après la suppression des constantes.
