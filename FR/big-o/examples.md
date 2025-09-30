@@ -360,3 +360,13 @@ for (int i = 0; i < a.length / 2; i++) {
 }
 ```
 $O(n/2) \implies O(n)$
+
+# Exemple 15 - Réduire les expression Big O
+Lequel des 2 peut être réduire à $O(n)$ ?
+
+$$O(n + p)$$
+$$O(n + log(n))$$
+
+$\implies O(n + log(n))$, puisque $log(n)$ est le terme non-dominant par rapport à $n$. 
+
+Si on ne connaît pas la relation entre $n$ et $p$, on doit garder les deux.
