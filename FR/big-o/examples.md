@@ -352,3 +352,11 @@ for (int i = 0; i < a.length; i++) {
 
 - La 3ème boucle iètre un nombre fixe $\implies O(1)$ 
 - Big O pour cet exemple est $O(n^2)$
+
+# Exemple 14 - Itérer la moitié d'un tableau
+```java
+for (int i = 0; i < a.length / 2; i++) {
+    // do something
+}
+```
+$O(n/2) \implies O(n)$
