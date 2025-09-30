@@ -338,3 +338,17 @@ Donc les 2 matrices ont une complexité de $O(n^2)$
 
 - Pour la 1ère matrice, la boucle interne s'exécute `n` fois, et encore `n` fois par la boucle externe, ce qui donne $O(n^2)$.
 - Pour la 2ème matrice, la boucle interne effectue `n/2` opérations + exécutée `n` fois par la boucle externe, donc $n * \frac{n}{2} = \frac{n^2}{2}$, ce qui donne $O(n^2)$, après la suppression des constantes.
+
+# Exemple 13 - Indentifier les boucles en O(1)
+```java
+for (int i = 0; i < a.length; i++) {
+    for (int j = 0; j < a.length; j++) {
+        for (int q = 0; q < 1000000; q++) {
+            System.out.println(a[i] + a[j]);
+        }
+    }
+}
+```
+
+- La 3ème boucle iètre un nombre fixe $\implies O(1)$ 
+- Big O pour cet exemple est $O(n^2)$
