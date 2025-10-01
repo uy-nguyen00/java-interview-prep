@@ -370,3 +370,24 @@ $$O(n + log(n))$$
 $\implies O(n + log(n))$, puisque $log(n)$ est le terme non-dominant par rapport à $n$. 
 
 Si on ne connaît pas la relation entre $n$ et $p$, on doit garder les deux.
+
+# Exemple 16 - Boucles avec $O(\log n)$
+
+```java
+for (int i = 0; i < a.length; i++) {
+    for (int j = a.length; j > 0; j /= 2) {
+        System.out.println(a[i] + ", " + j);
+    }
+}
+```
+
+- Boucle externe $O(n)$
+- Boucle interne : 
+    - Diviser j par 2 $\implies O(\log n)$
+- Complexité totale : 
+$ O(n) * O(\log n) = O(n \log n)$
+
+> [!NOTE] 
+> Algos de tri (Merge Sort, Heap Sort) ont une complexité de $O(n \log n)$.
+> Beaucoup d'algos en $O(n \log n)$ sont récursifs.
+> En général, les algos de type "Diviser pour régner (Divise and Conquer)" sont en $O(n \log n)$.
