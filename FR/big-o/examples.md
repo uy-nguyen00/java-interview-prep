@@ -383,11 +383,13 @@ for (int i = 0; i < a.length; i++) {
 
 - Boucle externe $O(n)$
 - Boucle interne : 
-    - Diviser j par 2 $\implies O(\log n)$
+    - Diviser j par 2 $\implies O(\log(n))$
 - Complexité totale : 
-$ O(n) * O(\log n) = O(n \log n)$
+$O(n) * O(\log(n)) = O(n \log(n))$
 
 > [!NOTE] 
-> Algos de tri (Merge Sort, Heap Sort) ont une complexité de $O(n \log n)$.
-> Beaucoup d'algos en $O(n \log n)$ sont récursifs.
-> En général, les algos de type "Diviser pour régner (Divise and Conquer)" sont en $O(n \log n)$.
+> Algos de tri (Merge Sort, Heap Sort) ont une complexité de $O(n \log(n))$.
+>
+> Beaucoup d'algos en $O(n \log(n))$ sont récursifs.
+>
+> En général, les algos de type "Diviser pour régner (Divise and Conquer)" sont en $O(n \log(n))$.
