@@ -392,4 +392,4 @@ $O(n) * O(\log(n)) = O(n \log(n))$
 >
 > Beaucoup d'algos en $O(n \log(n))$ sont récursifs.
 >
-> En général, les algos de type "Diviser pour régner (Divise and Conquer)" sont en $O(n \log(n))$.
+> En général, les algos de type "Diviser pour régner (Divise and Conquer)" sont en $O(n\;\log\:n)$.
