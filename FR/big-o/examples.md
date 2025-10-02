@@ -545,3 +545,24 @@ int sumDigits(int n) {
 Un nombre `n` avec `d` chiffres peut aller jusqu'à $10^d$.
 
 $10^d = n \implies \log_{10}{n} = d \implies O(\log{n})$
+
+# Exemple 23 - Tri
+
+```java
+boolean matching(int[] x, int[] y) {
+    mergesort(y);
+    for (int i : x) {
+        if (binarysearch(y, 1) >= 0) {
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+- Dans l'exemple 16, on sait que `Merge Sort` a une complexité de $O(n*\log{n})$, donc `mergesort(y)` a une complexité de $O(y*\log{y})$.
+- Dans l'exemple 17, on sait que `Binary Search` a une complexité de $O(\log{n})$, donc `binarysearch(y, i)` a une complexité de $O(\log{y})$.
+- Dans le pire des cas, la boucle `for` itère sur l'ensemble du tableau `x`, donc `binarysearch` sera exécuté `x.length` fois. 
+- La boucle `for` a une complexité de $O(x * \log{y})$.
+
+$\implies O(y * \log{y}) + O(x * \log{y}) = O(x * \log{y} + x * \log{y})$
