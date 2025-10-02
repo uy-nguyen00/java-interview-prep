@@ -488,3 +488,23 @@ int powerxy(int x, int y) {
 - 1er extrait :  $O(y)$
 - 2ème extrait : Parcourt la séquence $y-1$, $y-2$, ... 0
     - Chaque entrée `y` est parcourue **une seule fois** $\implies O(y)$
+
+# Exemple 20 - La somme et le décompte
+
+```java
+int div(int x, int y) {
+    int count = 0;
+    int sum = y;
+    while (sum <= x) {
+        sum += y;
+        count++;
+    }
+    return count;
+}
+```
+
+- Considérons que $x = 10$ et $y = 2$, `count` sera $10 / 2 = 5$.
+- $x = 14; y = 4 \implies count = 14 / 4 = 3.5 \approx 3$
+- $x = 22; y = 3 \implies count = 22 / 3 = 7.3 \approx 3$
+
+Donc dans le pire des cas, `count` est égal à $x/y \implies O(x/y)$.
