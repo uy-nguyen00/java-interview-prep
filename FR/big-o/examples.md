@@ -440,4 +440,22 @@ Dépend de la longeur des string $\implies O(s)$ pour chaque comparaison.
 
 $O(p * s * \log{s}) + O(s * p * \log{p})$
 
-$\implies O(s * p * (\log{s} + \log{p}))$    
+$\implies O(s * p * (\log{s} + \log{p}))$   
+
+# Exemple 18 - Big O factoriel
+
+```java
+long factorial(int num) {
+    if (num >= 1) {
+        return num * factorial(num - 1);
+    } else {
+        return 1;
+    }
+}
+```
+
+**NON** : $O(n!)$
+
+**OUI** : Le processus parcourt la séquence $n-1$, $n-2$, ... 1 fois
+
+$\implies O(n)$
