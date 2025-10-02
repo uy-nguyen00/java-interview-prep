@@ -18,7 +18,7 @@
 
 *La complexité nécisste parfois plusieurs variables (par exemple, `O(wl)` pour le temps nécessaire pour tondre l'herbe sur un terrain de foot, où `w` est la largeur du terrain et `l` la longueur). Si on doit tondre `p` terrains, le temps est de `O(wlp)`*
 
-*On peut aussi prendre en compte l'espace mémoire. Par exemple, construire un tableau de `n` éléments nécessitte `O(n)` d'espace mémoire; construire une matrice de `n x n` éléments nécessite O($n^2$) d'espace mémoire*
+*On peut aussi prendre en compte l'espace mémoire. Par exemple, construire un tableau de `n` éléments nécessitte `O(n)` d'espace mémoire; construire une matrice de `n x n` éléments nécessite $O(n^2)$ d'espace mémoire*
 
 # Le meilleur cas, le pire cas et le cas attendu
 - Le meilleur cas: les données d'entrée remplissent des conditions exceptionnelles &rarr; l'algo le plus performant
