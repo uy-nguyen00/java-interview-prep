@@ -528,3 +528,20 @@ int sqrt(int n) {
     - Quand `guess` = 4, $4 * 4 > 15$, la boucle s'arrête. La fonction retourne -1. On a donc 3 itérations.
 
 $\sqrt{n}$ itérations $\implies O(\sqrt{n})$
+
+# Exemple 22 - Chiffres
+
+```java
+int sumDigits(int n) {
+    int result = 0;
+    while (n > 0) {
+        result += n % 10;
+        n /= 10;
+    }
+    return result;
+}
+```
+
+Un nombre `n` avec `d` chiffres peut aller jusqu'à $10^d$.
+
+$10^d = n \implies \log_{10}{n} = d \implies O(\log{n})$
