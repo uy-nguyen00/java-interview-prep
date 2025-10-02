@@ -393,3 +393,51 @@ $O(n) * O(\log(n)) = O(n \log(n))$
 > Beaucoup d'algos en $O(n \log(n))$ sont récursifs.
 >
 > En général, les algos de type "Diviser pour régner (Divide and Conquer)" sont en $O(n  \log  n)$.
+
+# Exemple 17 - Comparaison de string
+
+```java
+String[] sortArrayOfString(String[] a) {
+    for (int i = 0; i < a.length; i++) {
+        // sort each string via O(n log n) algo
+    }
+    // sort the array itself via O(n log n) algo
+    return a;
+}
+```
+
+$O(n^2 \log{n})$ ?
+
+**NON**, car:
+1. Faut pas utiliser `n` pour 2 choses différentes.
+2. Faut pas supposer que la comparaison des strings prend $O(1)$.
+
+Décomposons le problème:
+
+**1. Utiliser des variables distinctes**
+- `p` : taille du tableau (nbre de string qu'il contient).
+- `s` : longueur du string le plus long
+
+**2. Comprendre le coût de la comparaison**
+
+Dépend de la longeur des string $\implies O(s)$ pour chaque comparaison.
+
+**3. Recalculer la complexité totale**
+
+2 parties:
+- Trier chaque string du tableau
+    - Pour un string de longeur `s` : $O(s \log{s})$.
+    - `p` chaînes donc `p` fois.
+    - $\implies O(p * s * \log{s})$
+
+- Trier le tableau lui-même
+    - $O(p * \log{p})$ comparaisons pour un tableau de taille `p`.
+    - Chaque comparaison n'est pas $O(1)$, mais en $O(s)$.
+    - $\implies$ nbre_comparaisons * cout_chaque_comparaison
+    - $\implies O(s * p * \log{p})$ 
+
+**Complexité finale :**
+
+$O(p * s * \log{s}) + O(s * p * \log{p})$
+
+$\implies O(s * p * (\log{s} + \log{p}))$    
