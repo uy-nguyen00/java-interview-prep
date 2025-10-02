@@ -459,3 +459,32 @@ long factorial(int num) {
 **OUI** : Le processus parcourt la séquence $n-1$, $n-2$, ... 1 fois
 
 $\implies O(n)$
+
+# Exemple 19 - Utiliser la notation n avec prudence
+
+```java
+int multiply(int x, int y) {
+    int result = 1;
+    for (int i = 1; i <= y; i++) {
+        result *= x;
+    }
+
+    return result;
+}
+```
+
+```java
+int powerxy(int x, int y) {
+    if (y < 0) {
+        return 0;
+    } else if (y == 0) {
+        return 1;
+    } else {
+        return x * powerxy(x, y - 1);
+    }
+}
+```
+
+- 1er extrait :  $O(y)$
+- 2ème extrait : Parcourt la séquence $y-1$, $y-2$, ... 0
+    - Chaque entrée `y` est parcourue **une seule fois** $\implies O(y)$
