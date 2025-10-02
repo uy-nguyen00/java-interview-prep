@@ -508,3 +508,23 @@ int div(int x, int y) {
 - $x = 22; y = 3 \implies count = 22 / 3 = 7.3 \approx 3$
 
 Donc dans le pire des cas, `count` est égal à $x/y \implies O(x/y)$.
+
+# Exemple 21 - Le nbr d'itérations est pris en compte dans la notation Big O
+
+```java
+int sqrt(int n) {
+    for (int guess = 1; guess * guess <= n; guess++) {
+        if (guess * guess == n) {
+            return guess;
+        }
+    }
+    return -1;
+}
+```
+
+- $n = 144 \implies$ 12 itérations
+- $n = 15$ : 
+    - `guess` prend les valeurs 1, 2 et 3.
+    - Quand `guess` = 4, $4 * 4 > 15$, la boucle s'arrête. La fonction retourne -1. On a donc 3 itérations.
+
+$\sqrt{n}$ itérations $\implies O(\sqrt{n})$
