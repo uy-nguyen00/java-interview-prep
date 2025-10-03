@@ -509,3 +509,8 @@ public class Main {
 ## 15. Différences entre Polymorphisme et Abstraction?
 - **Abstraction** : Solutions générales, réutilisables, personnalisables. Mise en oeuvre par `interfaces` + `classes abstraites`.
 - **Polymorphisme** : Choix du code différé à l'exécution. Mise en oeuvre par `overriding` + `overloading`.
+
+## 16. Considérez-vous la surcharge (overloading) comme une approche pour implémenter le polymorphisme?
+- Sujet controversé.
+- Surcharge &rarr; Compile-time polymorphism. 
+- Est toujours considéré comme une forme de polymorphisme.
