@@ -45,6 +45,6 @@
 ### Decorator
 ![alt text](img/decorator-1.png)
 
+- Ne crée pas d'objets.
 - Décore un objet existant avec de nouvelles fonctionnalités à l'exécution.
-- N'ajoute pas de nouvelles fonctionnalités; il "façade" simplement les fonctionnalités existantes.
 - Le chaînage de décorateurs dans un certain ordre est une manière correcte d'exploiter ce patron.
