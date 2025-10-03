@@ -498,3 +498,10 @@ public class Main {
     }
 }
 ```
+
+## 14. Peut-on écrire des méthodes virtuelles en Java?
+- Oui, c'est possible.
+- En Java, par défaut, toutes méthodes sont virtuelles.
+- Méthodes non-virtuelles :
+    - `private` : car ne peut pas être héritée.
+    - `static` : car ne peut pas être redéfinie.
