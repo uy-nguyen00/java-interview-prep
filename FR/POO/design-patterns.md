@@ -62,3 +62,21 @@
 ![alt text](img/decorator-1.png)
 
 - Ajoute de nouvelles fonctionnalités à un objet existant (décorer l'objet).
+
+## 6. Diff. Template Method <> Strategy ?
+**Les 2 encapsulent des algos (spécifiques à un domain / domain-specific) dans des objets, mais ils ne le font pas de la même manière.**
+
+### Strategy
+![alt text](img/strategy-1.png)
+- Permet de décider entre diff. algos (stratégies) à l'exécution, selon les besoins.
+
+*Par exemple, le pattern Strategy choisit parmis différentes méthodes de paiement (carte de crédit, PayPal)*.
+
+### Template Method
+![alt text](img/template-method-1.png)
+
+- Définit un squelette fixe pour l'implémentation d'un algo.
+- Suit une séquence d'étapes prédéfinie.
+- Certains étapes fixes, d'autres peuvent être flexibles.
+
+*Par exemple, le pattern Template Method décrit une liste d'étapes à faire pour une stratégie (le paiement par PayPal doit passer un nombre d'étapes).*
