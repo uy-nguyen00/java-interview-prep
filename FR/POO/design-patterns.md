@@ -31,3 +31,20 @@
 - Affiche des comportements différents dans des états différents sans changer la classe.
 - Possède un ordre clair de transition d'état, créant un flux en liant chaque état à un autre.
     - Par exemple, un colis peut passer de l'état *Commandé* &rarr; *Expédié* &rarr; *Livré*.
+
+## 4. Diff. Proxy <> Decorator ?
+
+### Proxy
+![alt text](img/proxy-1.png)
+
+- Fournit une passerelle pour contrôler l'accès à un objet.
+- Crée des objets "proxy" qui se substituent à l'objet réel.
+- Décide comment et quand transférer les requêtes à l'objet réel.
+- Le chaînage des proxies n'est pas recommandé.
+
+### Decorator
+![alt text](img/decorator-1.png)
+
+- Décore un objet existant avec de nouvelles fonctionnalités à l'exécution.
+- N'ajoute pas de nouvelles fonctionnalités; il "façade" simplement les fonctionnalités existantes.
+- Le chaînage de décorateurs dans un certain ordre est une manière correcte d'exploiter ce patron.
