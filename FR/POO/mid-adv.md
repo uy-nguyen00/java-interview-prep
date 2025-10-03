@@ -505,3 +505,7 @@ public class Main {
 - Méthodes non-virtuelles :
     - `private` : car ne peut pas être héritée.
     - `static` : car ne peut pas être redéfinie.
+
+## 15. Différences entre Polymorphisme et Abstraction?
+- **Abstraction** : Solutions générales, réutilisables, personnalisables. Mise en oeuvre par `interfaces` + `classes abstraites`.
+- **Polymorphisme** : Choix du code différé à l'exécution. Mise en oeuvre par `overriding` + `overloading`.
