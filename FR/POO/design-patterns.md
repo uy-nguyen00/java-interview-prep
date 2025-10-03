@@ -48,3 +48,17 @@
 - Ne crée pas d'objets.
 - Décore un objet existant avec de nouvelles fonctionnalités à l'exécution.
 - Le chaînage de décorateurs dans un certain ordre est une manière correcte d'exploiter ce patron.
+
+## 5. Diff. Facade <> Decorator ?
+
+### Facade
+![alt text](img/facade-1.png)
+
+- N'ajoute pas de nouvelles fonctionnalités.
+- Sert de "façade" aux fonctionanlités existantes en masquant la complexité du système.
+- Expose une interface qui appelle des composants individuels pour accomplir des tâches complexes.
+
+### Decorator
+![alt text](img/decorator-1.png)
+
+- Ajoute de nouvelles fonctionnalités à un objet existant (décorer l'objet).
