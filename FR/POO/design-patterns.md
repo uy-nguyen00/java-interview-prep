@@ -28,6 +28,28 @@
   - Créer de nouveux objets **en copiant un objet existant** (le prototype) au lieu de créer de nouvelles instances à partir de zéro.
   - Efficace pour la création d'objets complexes.
 
+### Structural (7 patterns)
+
+- **Adapter** :
+  - Permet aux 2 **interfaces incompatiles de fonctionner ensemble** en wrappant l'une autour de l'autre.
+  - Agit comme un pont entre des systèmes différents.
+- **Composite** :
+  - Compose des objets en **structures arborescents**.
+  - Permet de traiter des compositions d'objets comme des objets individuels.
+- **Proxy** :
+  - Permet d'utiliser un **substitut** pour un objet.
+  - Donne le **contrôle sur l'objet original** &rarr; effectuer des manipulations **avant ou après** que la demande ne lui parvienne.
+- **Flyweight** :
+  - Stocker plus d'objets **dans la RAM**.
+  - **Partage les états similaires entre de multiples objets**, plutôt que de stocker les données dans chaque objet.
+- **Facade** :
+  - Fournit une *interface* offrant un **accès simplifié** à une librairie, framework ou ensemble complexe de classes.
+- **Bridge** :
+  - **Sépare une grosse classe / ensemble de classes connexes** en 2 hiérarchies - abstraction ou implémentation - qui peuvent évoluer indépendamment l'une de l'autre
+- **Decorator** :
+  - **Affecte dynamiquement de nouveaux comportements** à des objets.
+  - **Place les objets dans les wrappers** qui implémentent leurs comportements.
+
 ## 1. Quel concept POO sert le patron de conception `Decorator` ?
 
 **Composition**. Grâce à cela, le patron de conception Decorator fournit de nouvelles fonctionnalités sans modifier la classe d'origine.
