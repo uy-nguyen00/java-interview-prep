@@ -68,13 +68,13 @@
 
 ## 3. Diff. Strategy <> State design patterns ?
 
-### Strategy
+### Strategy (vs State)
 
 ![alt text](img/strategy-1.png)
 
 - Permet de basculer entre diff. algos.
 - Les algos sont utilisés de manière ineterchangeable par le client via la composition et la délégation à l'exécution.
-- Le client peut choisir l'algo qu'il souhaite, dans n'importe quel ordre. 
+- Le client peut choisir l'algo qu'il souhaite, dans n'importe quel ordre.
   - Par exemple, diff. stratégies pour livrer un colis.
 
 ### State
@@ -97,7 +97,7 @@
 - Décide comment et quand transférer les requêtes à l'objet réel.
 - Le chaînage des proxies n'est pas recommandé.
 
-### Decorator
+### Decorator (vs Proxy)
 
 ![alt text](img/decorator-1.png)
 
@@ -115,7 +115,7 @@
 - Sert de "façade" aux fonctionanlités existantes en masquant la complexité du système.
 - Expose une interface qui appelle des composants individuels pour accomplir des tâches complexes.
 
-### Decorator
+### Decorator (vs Facade)
 
 ![alt text](img/decorator-1.png)
 
@@ -125,7 +125,7 @@
 
 **Les 2 encapsulent des algos (spécifiques à un domain / domain-specific) dans des objets, mais ils ne le font pas de la même manière.**
 
-### Strategy
+### Strategy (vs Template Method)
 
 ![alt text](img/strategy-1.png)
 
@@ -172,7 +172,7 @@
 ![alt text](img/adapter-1.png)
 
 - **Objectif** : Fournir une compatibilité entre un code existant non-modifiable (librairie externe), et un nouveau système/interface.
-- **Relation dans le temps** : L'adaptateur est implémenté **après** que les composants aient été conçus 
+- **Relation dans le temps** : L'adaptateur est implémenté **après** que les composants aient été conçus.
 - Agit comme un **intermédiaire** entre 2 systèmes indépendants mais ne peuvent pas communiquer entre eux.
 
 ### Bridge (Before)
