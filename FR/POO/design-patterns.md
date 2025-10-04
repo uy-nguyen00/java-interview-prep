@@ -99,3 +99,17 @@
 - Nécessite de passer tous les paramètres nécessaires lors de cet appel.
 - Agit comme un wrapper d'un constructeur.
 - Idéal pour les objets avec un nombre fixe de paramètres.
+
+## 8. Diff. Adapter <> Bridge ?
+
+### Adapter (After)
+![alt text](img/adapter-1.png)
+- **Objectif** : Fournir une compatibilité entre un code existant non-modifiable (librairie externe), et un nouveau système/interface.
+- **Relation dans le temps** : L'adaptateur est implémenté **après** que les composants aient été conçus 
+- Agit comme un **intermédiaire** entre 2 systèmes indépendants mais ne peuvent pas communiquer entre eux.
+
+### Bridge (Before)
+![alt text](img/bridge-1.png)
+- **Objectif** : Découpler une abstraction de son implémentation.
+- **Relation dans le temps** : Le pont est mis en oeuvre **en amont** ou **dès le départ**.
+- Permet la variation de l'abstraction de l'implémentation, évitant le nombre de classes cumulé et pb de scalabilité.
