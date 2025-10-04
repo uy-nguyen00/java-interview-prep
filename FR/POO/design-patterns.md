@@ -80,3 +80,22 @@
 - Certains étapes fixes, d'autres peuvent être flexibles.
 
 *Par exemple, le pattern Template Method décrit une liste d'étapes à faire pour une stratégie (le paiement par PayPal doit passer un nombre d'étapes).*
+
+## 7. Diff. Builder <> Factory ?
+
+### Builder
+![alt text](builder-1.png)
+- Conçu pour construire des objets complexes.
+- Utilise le chaînage de méthodes `set`.
+- Permet de former n'importe quelle combinaison de paramètres.
+- Méthode `build()` à la fin de la chaîne.
+- Agit comme un wrapper de tous les paramètres possibles d'un constructeur.
+- Permet d'éviter le "telescopic constructor".
+
+### Factory
+![alt text](img/factory-2.png)
+
+- Crée un objet en un seul appel de méthode.
+- Nécessite de passer tous les paramètres nécessaires lors de cet appel.
+- Agit comme un wrapper d'un constructeur.
+- Idéal pour les objets avec un nombre fixe de paramètres.
