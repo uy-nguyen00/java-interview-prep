@@ -514,3 +514,12 @@ public class Main {
 - Sujet controversé.
 - Surcharge &rarr; Compile-time polymorphism. 
 - Est toujours considéré comme une forme de polymorphisme.
+
+## 17. Classe abstraite <> Interface ?
+| Points | Classe abstraite | Interface |
+| ------ | ---------------- | --------- |
+| Définition | Ne peut pas être instantié; contient les méthodes abstraites (sans impl.) et concrètes (avec impl.). | Ne peut pas être instantié; Possède les méthodes à impl. ; méthodes abstraites par défaut. |
+| Manière d'implémentation | Peut avoir méthodes implémentées et abstraites. | Méthodes abstraites par défaut; Depuis Java 8, peut avoir méthodes `default` et `static`; Depuis Java 9, peut avoir méthodes `private`. |
+| Héritage | Classe peut hériter **une seule** classe abstraite. | Classe peut implémenter **plusieurs** interfaces. |
+| Modificateurs d'accès (méthodes + propriétés) | N'importe (`public`, `protected`, `private`). | Implicitement `public`. |
+| Variables | `final`, `non-final`, `static`, `non-static`.| Implicitement `public`, `static`, `final` (constants). |
