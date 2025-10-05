@@ -29,13 +29,33 @@ Les articles et les pièces sont idéals pour les `enums` Java
 ```java
 public enum Coin {
     10_CENT(0.10), 20_CENT(0.20), 50_CENT(0.50), 1_EUR(1), 2_EUR(2);
+
+    private final int denomination;
+
+    private Coin(int denomination) {
+        this.denomination = denomination;
+    }
+
+    public int getDenomination() {
+        return denomination;
+    }
 }
 ```
 
 ```java
 public enum Item {
-    LION("Lion", 1.5), TWIX("Twix", 2.2),
-    ... ; 
+
+    LION("Lion", 1.5), TWIX("Twix", 2.2), SNICKERS("Snickers", 3.1);
+    
+    private final String name;
+    private final int price;
+
+    private Item(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    // getters
 }
 ```
 
@@ -48,8 +68,15 @@ public final class Inventory<T> {
 
     private Map<T, Integer> inventory = new HashMap<>();
 
-    protected int getQuantity(T item) {...}
-    protected boolean hasItem(T item) {...}
+    protected int getQuantity(T item) {
+        Integer quantity = inventory.get(item);
+        return quantity == null ? 0 : quantity;
+    }
+
+    protected boolean hasItem(T item) {
+        return getQuantity(item) > 0;
+    }
+    
     protected void clear() {...}
     protected void add(T item) {...}
     protected void put(T item, int quantity) {...}
