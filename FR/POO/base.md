@@ -66,7 +66,7 @@ En Java, l'abstraction réalisée via les classes abstraites + interfaces.
 
 *Exemple: Class `Employee` -- subclasses `Developer` / `Product Manager`*
 
-## 7. C'est quoi l'assocation? 
+## 7. C'est quoi l'association? 
 - Concept core de POO
 - Définir la relation entre 2 classes indépendantes
 - Relation de multiplicité
